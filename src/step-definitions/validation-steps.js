@@ -6,3 +6,10 @@ Then("Error message should be equal to {string}", async (errorMsg) => {
     errorMsg,
   );
 });
+
+Then(
+  "I will see Dashboard page's header with {string} title",
+  async (title) => {
+    await expect(await pages("dashboard").header.logo.getText()).toEqual(title);
+  },
+);

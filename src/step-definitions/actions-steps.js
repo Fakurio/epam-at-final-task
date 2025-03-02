@@ -5,21 +5,21 @@ Given("I open {string} page", async (pageName) => {
   await pages(pageName).open();
 });
 
-When("I type value into {string} form field", async (formField) => {
-  await pages("login").loginForm.inputField(formField).setValue("Kamil");
+When("I type {string} into {string} form field", async (value, formField) => {
+  await pages("login").loginForm.inputField(formField).setValue(value);
 });
 
 When("I clear {string} form field", async (fieldSelector) => {
   switch (fieldSelector) {
     case "every":
-      await pages("login").loginForm.inputField("username").setValue("");
-      await pages("login").loginForm.inputField("password").setValue("");
+      await pages("login").loginForm.inputField("username").clearValue();
+      await pages("login").loginForm.inputField("password").clearValue();
       break;
     case "username":
-      await pages("login").loginForm.inputField("username").setValue("");
+      await pages("login").loginForm.inputField("username").clearValue();
       break;
     case "password":
-      await pages("login").loginForm.inputField("password").setValue("");
+      await pages("login").loginForm.inputField("password").clearValue();
       break;
   }
 });
