@@ -12,14 +12,14 @@ When("I type {string} into {string} form field", async (value, formField) => {
 When("I clear {string} form field", async (fieldSelector) => {
   switch (fieldSelector) {
     case "every":
-      await pages("login").loginForm.inputField("username").clearValue();
-      await pages("login").loginForm.inputField("password").clearValue();
+      await pages("login").loginForm.clearField("username");
+      await pages("login").loginForm.clearField("password");
       break;
     case "username":
-      await pages("login").loginForm.inputField("username").clearValue();
+      await pages("login").loginForm.clearField("username");
       break;
     case "password":
-      await pages("login").loginForm.inputField("password").clearValue();
+      await pages("login").loginForm.clearField("password");
       break;
   }
 });

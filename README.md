@@ -34,7 +34,3 @@ Test Automation tool:
 - Patterns: Page Object;
 - Assertions: Use from the selected framework;
 - [Optional] Loggers: Use from the selected framework.
-----------------------------------------------------------------
-All scenario pass in Firefox browser but there is weird bug in Chrome. During 1st and
-2nd scenario after clicking login button previously cleared form input get their values
-back so different error message is displayed and tests fail.
