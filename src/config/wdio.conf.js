@@ -41,7 +41,7 @@ export const config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  maxInstances: 2,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -50,6 +50,12 @@ export const config = {
   capabilities: [
     {
       browserName: "chrome",
+      "goog:chromeOptions": {
+        prefs: {
+          "profile.password_manager_enabled": false,
+          "profile.password_manager_leak_detection": false,
+        },
+      },
     },
     {
       browserName: "firefox",
